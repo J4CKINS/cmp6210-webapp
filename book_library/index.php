@@ -12,9 +12,9 @@
 					<th>Book Info</th>
 				</tr>
  <?php
-  $host='localhost';
-  $user= 'root';
-  $pass='';
+  $host='group55-rds-db.chynz6uunsvr.us-east-1.rds.amazonaws.com';
+  $user= 'admin';
+  $pass='Group55Password!';
   $db='bkldb';
   
   $conn= new mysqli($host, $user, $pass, $db) or die ("Failed to Connect to DB: %s\n". $conn -> error);
