@@ -16,6 +16,7 @@
   $user= 'admin';
   $pass='Group55Password!';
   $db='bkldb';
+  $s3_url= 'https://group55-s3-public.s3.us-east-1.amazonaws.com';
   
   $conn= new mysqli($host, $user, $pass, $db) or die ("Failed to Connect to DB: %s\n". $conn -> error);
   
@@ -23,7 +24,7 @@
   $query = $conn->query($sql);
   while($result = $query -> fetch_array(MYSQLI_ASSOC))
   {
-	  $file_name = $result['ISBN'] . ".png";
+	  $file_name = $result['ISBN'] . ".jpg";
 	  $isbn = "ISBN: " . $result['ISBN'];
 	  $title = "Title: " . $result['Title'];
 	  $auth = "Author: " . $result['Author'];
@@ -31,7 +32,7 @@
 	  $pub_year = "Publishing Year: " . $result['Pub_year'];
 	  
 	  echo "<tr>";
-	  echo "<td><img src=\"images\\$file_name\" alt=\"BookCover\" /></td>";
+	  echo "<td><img src=\"$s3_url/$file_name\" alt=\"BookCover\" /></td>";
 	  echo "<td>
 				<div>$isbn</div>
 				<div>$title</div>
