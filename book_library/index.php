@@ -2,10 +2,11 @@
 <html>
 	<head>
 		<title>Book Library</title>
+		<link rel='stylesheet' type='text/css' href='/static/css/index.css'/>
 	</head>
 	<body>
 		<center>
-			<h1>Welcome to Online Book Library</h1>
+			<h1>The Book Store</h1>
 				<?php
 				$host='group55-rds-db.chynz6uunsvr.us-east-1.rds.amazonaws.com';
 				$user= 'admin';
@@ -20,11 +21,11 @@
 				while($result = $query -> fetch_array(MYSQLI_ASSOC))
 				{
 					$file_name = $result['ISBN'] . ".jpg";
-					$isbn = "ISBN: " . $result['ISBN'];
-					$title = "Title: " . $result['Title'];
-					$auth = "Author: " . $result['Author'];
-					$publisher = "Publisher: " . $result['Publisher'];
-					$pub_year = "Publishing Year: " . $result['Pub_year'];
+					$isbn = $result['ISBN'];
+					$title = $result['Title'];
+					$auth = $result['Author'];
+					$publisher = $result['Publisher'];
+					$pub_year = $result['Pub_year'];
 					
 					echo "<div class='book'>";
 						echo "<img src=\"$s3_url/$file_name\" alt=\"BookCover\" />";

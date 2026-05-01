@@ -1,0 +1,14 @@
+body {
+	background-color:#000000;
+	color: #FFFFFF;
+}
+
+.book {
+	width: 900px;
+	padding: 20px;
+	border: 2px solid #FFFFFF;
+}
+
+.book img {
+	width: 100%;
+}
